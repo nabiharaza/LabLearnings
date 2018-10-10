@@ -45,7 +45,9 @@ def triangle(itr, length):
 
 
 def init():
+
     t.setup(1200, 1200)
+
     t.bgcolor("black")
     t.color("white")
     t.pensize(2)
@@ -54,7 +56,7 @@ def init():
 
 def main():
     init()
-    length = 100
+    length = 150
     triangle(5, length)
     t.mainloop()
 
