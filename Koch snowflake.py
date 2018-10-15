@@ -44,6 +44,7 @@ def init():
     # t.pd()
 
 
+# nabiharaza
 def main():
     init()
     length = 100

@@ -4,8 +4,9 @@ def lenQ(n):
 
 
 def main():
-    str = 3
-    print lenQ(str)
+    y = 0
+    for i in range(10, 1):
+        print i
 
 
 if __name__ == "__main__":
