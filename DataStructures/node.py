@@ -3,10 +3,6 @@ node.py
 author: James heliotis
 description: A linkable node class for use in stacks, queues, and linked lists
 """
-
-1
-
-
 class LinkedNode:
     __slots__ = "value", "link"
 
@@ -43,7 +39,6 @@ def test():
     print()
     print(nodes)
     print(repr(nodes))
-
 
 if __name__ == "__main__":
     test()

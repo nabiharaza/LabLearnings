@@ -14,7 +14,7 @@ class Queue:
         """ Return a string representation of the contents of
             this queue, oldest value first.
         """
-        result = "Queue["
+        result = "Str Queue["
         n = self.front
         while n != None:
             result += " " + str(n.value)
@@ -57,10 +57,10 @@ def test():
     s.dequeue()
     print(s)
     for value in 15, 16:
-        s.insert(value)
+        s.enqueue(value)
         print(s)
     print("Removing:", s.peek())
-    s.remove()
+    s.dequeue()
     print(s)
     while not s.is_empty():
         print("Dequeueing:", s.peek())
@@ -72,7 +72,6 @@ def test():
         print("Problem: it succeeded!")
     except Exception as e:
         print("Exception was '" + str(e) + "'")
-
 
 if __name__ == "__main__":
     test()
