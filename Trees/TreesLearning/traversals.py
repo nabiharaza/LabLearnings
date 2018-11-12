@@ -101,6 +101,18 @@ def contains(root, value):
     return __contains(root, value, 0)
 
 
+def list_longest_path(root):
+    if not root:
+        return []
+
+    l = list_longest_path(root.left)
+    r = list_longest_path(root.right)
+
+    if len(l) > len(r):
+        return [root.value] + l
+    else:
+        return [root.value] + r
+
 def traverse(root):
     print("\n postorder")
     postorder(root)
@@ -121,11 +133,15 @@ def traverse(root):
     print_reverse_tree(root)
 
     print ("\n\n contains at level")
-    Level = contains(root, 'E')
+    Level = contains(root, 'B')  # //b
     print Level
 
     print ("\n\n Deepest node")
     print (print_deepest_node(root))
+
+    print list_longest_path(root)
+
+
 
 
 def test_traversal():
