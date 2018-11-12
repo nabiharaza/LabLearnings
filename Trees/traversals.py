@@ -5,6 +5,7 @@ Author: Sean Strout @ RIT CS
 This is an implementation of three recursive traversals
 (preorder, inorder, postorder, on a binary tree composed of BTNode's.
 """
+import sys
 
 from btnode import BTNode
 
@@ -17,7 +18,7 @@ def preorder(node):
     :return: None
     """
     if node != None:
-        print(node.val)
+        print(node.val),
         preorder(node.left)
         preorder(node.right)
 
@@ -31,7 +32,7 @@ def inorder(node):
     """
     if node != None:
         inorder(node.left)
-        print(node.val)
+        print(node.val),
         inorder(node.right)
 
 
@@ -45,7 +46,7 @@ def postorder(node):
     if node != None:
         postorder(node.left)
         postorder(node.right)
-        print(node.val)
+        print(node.val),
 
 
 def traverse(node):
@@ -71,6 +72,12 @@ def testTraversals():
     A function to test the traversals over different binary trees.
     :return: None
     """
+    name = raw_input("What is your name? ")
+    print "Okay: " + name
+
+    age = input("What is your age?  ")
+    print ("Entered Value: ") + str(age)
+
     # single node
     traverse(BTNode(10))
 
@@ -90,6 +97,22 @@ def testTraversals():
                                   BTNode('H'),
                                   BTNode('I')))))
 
+    traverse(BTNode(2,
+                    BTNode(7,
+                           BTNode(2),
+                           BTNode(6,
+                                  BTNode(5),
+                                  BTNode(11))),
+                    BTNode(5,
+                           None,
+                           BTNode(9,
+                                  BTNode(4),
+                                  None))))
+
+
+print "This is the name of the script: ", sys.argv[0]
+print "Number of arguments: ", len(sys.argv)
+print "The arguments are: ", str(sys.argv)
 
 if __name__ == '__main__':
     testTraversals()
