@@ -9,16 +9,16 @@ class BST:
         self.size = 0
 
     def __insert(self, value, root):
-        if value < self.root.value:
+        if value < root.value:
             if root.left is None:
                 root.left = BTNode(value)
-                print ("inserted at left: " + str(root.left.value))
+                print ("Parent: " + str(root.value) + " --- Child Inserted at left: " + str(root.left.value))
             else:
                 self.__insert(value, root.left)
         else:
             if root.right is None:
                 root.right = BTNode(value)
-                print ("inserted at right: " + str(root.right.value))
+                print ("Parent: " + str(root.value) + " --- Child at right: " + str(root.right.value))
             else:
                 self.__insert(value, root.right)
 
@@ -27,13 +27,15 @@ class BST:
             self.root = BTNode(value)
         else:
             self.__insert(value, self.root)
+        self.size = self.size + 1
+
 
 
 def test_BST():
     a = BST()
-    a.insert(10)
-    a.insert(9)
-    a.insert(30)
+    for values in (12, 90, 2, 5, 100, 4, 6):
+        a.insert(values)
+    print ("Size of the tree: " + str(a.size))
 
 
 if __name__ == '__main__':
