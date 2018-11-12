@@ -1,5 +1,7 @@
 from btnode import BTNode
 
+level = 0
+
 
 def inorder(root):  # LCR
     if root != None:
@@ -40,6 +42,17 @@ def display_parents(root):
             display_parents(root.left)
             display_parents(root.right)
 
+
+def display_same_height_nodes(root, k):
+    if root is None:
+        return
+    if k == 0:
+        print root.value,
+    else:
+        display_same_height_nodes(root.left, k - 1)
+        display_same_height_nodes(root.right, k - 1)
+
+
 def traverse(root):
     print("\n postorder")
     postorder(root)
@@ -51,6 +64,8 @@ def traverse(root):
     display_leaves(root)
     print ("\n\n Display only parents")
     display_parents(root)
+    print ("\n\n Display nodes at the same height")
+    display_same_height_nodes(root, 2)
 
 
 def test_traversal():
