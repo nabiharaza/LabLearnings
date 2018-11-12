@@ -22,6 +22,19 @@ def postorder(root):  # LRC
         print (root.value),
 
 
+def display_leaves(root):
+    if root != None:
+        if root.left == None and root.right == None:
+            print(root.value),
+        else:
+            display_leaves(root.left)
+            display_leaves(root.right)
+
+
+
+
+
+
 def traverse(root):
     print("\n postorder")
     postorder(root)
@@ -29,6 +42,8 @@ def traverse(root):
     preorder(root)
     print ("\n inorder ")
     inorder(root)
+    print ("\n\n Display Leaves")
+    display_leaves(root)
 
 
 def test_traversal():
