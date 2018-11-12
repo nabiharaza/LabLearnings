@@ -31,9 +31,14 @@ def display_leaves(root):
             display_leaves(root.right)
 
 
-
-
-
+def display_parents(root):
+    if root != None:
+        if root.left == None and root.right == None:
+            pass
+        else:
+            print (root.value),
+            display_parents(root.left)
+            display_parents(root.right)
 
 def traverse(root):
     print("\n postorder")
@@ -44,6 +49,8 @@ def traverse(root):
     inorder(root)
     print ("\n\n Display Leaves")
     display_leaves(root)
+    print ("\n\n Display only parents")
+    display_parents(root)
 
 
 def test_traversal():
@@ -57,9 +64,6 @@ def test_traversal():
                            BTNode('G',
                                   BTNode('K')),
                            BTNode('H'))))
-
-
-
 
 
 if __name__ == "__main__":

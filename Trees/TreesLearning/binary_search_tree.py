@@ -73,7 +73,7 @@ def test_BST():
     # print ("Size of the tree: " + str(a.size))
     a.contains(5)
     h = a.height()
-    print (str(h))
+    print ("Height of the tree is: "(str(h)))
 
 
 if __name__ == '__main__':
