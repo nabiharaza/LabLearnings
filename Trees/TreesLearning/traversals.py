@@ -70,6 +70,37 @@ def height(root):
     return __height(root)
 
 
+def __contains(root, value, level):
+    if root is None:
+        return level
+    elif root.value == value:
+        return level
+    elif root.value > value:
+        return __contains(root.left, value, level + 1)
+    elif root.value < value:
+        return __contains(root.right, value, level + 1)
+
+
+def find_deepest_node(root, level, max_level, current_deep_root):
+    if root != None:
+        find_deepest_node(root.left, level + 1, max_level, current_deep_root)
+        if level > max_level:
+            current_deep_root = root.value
+            max_level = level
+        find_deepest_node(root.right, level, max_level, current_deep_root)
+
+
+def print_deepest_node(root):
+    res = -1
+    maxLevel = -1
+    find_deepest_node(root, 0, maxLevel, res)
+    return res
+
+
+def contains(root, value):
+    return __contains(root, value, 0)
+
+
 def traverse(root):
     print("\n postorder")
     postorder(root)
@@ -88,6 +119,13 @@ def traverse(root):
 
     print ("\n\n Print Reversel")
     print_reverse_tree(root)
+
+    print ("\n\n contains at level")
+    Level = contains(root, 'E')
+    print Level
+
+    print ("\n\n Deepest node")
+    print (print_deepest_node(root))
 
 
 def test_traversal():
