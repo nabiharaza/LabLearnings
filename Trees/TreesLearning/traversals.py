@@ -102,11 +102,13 @@ def contains(root, value):
 
 
 def list_longest_path(root):
-    if not root:
+    if root is None:
         return []
 
     l = list_longest_path(root.left)
+    # print ("left") +str(l)
     r = list_longest_path(root.right)
+    # print ("Right") + str(r)
 
     if len(l) > len(r):
         return [root.value] + l
@@ -139,6 +141,7 @@ def traverse(root):
     print ("\n\n Deepest node")
     print (print_deepest_node(root))
 
+    print ("\n\n Longest Path")
     print list_longest_path(root)
 
 
