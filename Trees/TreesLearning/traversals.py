@@ -32,32 +32,19 @@ def traverse(root):
 
 
 def test_traversal():
-    # b = BTNode(10)
-    # BTNode(10, BTNode(20,BTNode,50,30)),BTNode
-    # inorder(BTNode('A', BTNode('B'), BTNode('C')))
-    traverse(BTNode(2,
-                    BTNode(7,
-                           BTNode(2),
-                           BTNode(6,
-                                  BTNode(5),
-                                  BTNode(11))),
-                    BTNode(5,
-                           None,
-                           BTNode(9,
-                                  BTNode(4),
-                                  None))))
+    traverse(BTNode('A',
+                    BTNode('B',
+                           BTNode('D'),
+                           BTNode('E',
+                                  BTNode('I'),
+                                  BTNode('J'))),
+                    BTNode('C',
+                           BTNode('G',
+                                  BTNode('K')),
+                           BTNode('H'))))
 
-    # traverse(BTNode('A',
-    #                 BTNode('B',
-    #                        None,
-    #                        BTNode('D')),
-    #                 BTNode('C',
-    #                        BTNode('E',
-    #                               BTNode('G'),
-    #                               None),
-    #                        BTNode('F',
-    #                               BTNode('H'),
-    #                               BTNode('I')))))
+
+
 
 
 if __name__ == "__main__":
