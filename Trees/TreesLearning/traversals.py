@@ -48,9 +48,26 @@ def display_same_height_nodes(root, k):
         return
     if k == 0:
         print root.value,
-    else:
+    elif k > 0:
         display_same_height_nodes(root.left, k - 1)
         display_same_height_nodes(root.right, k - 1)
+
+
+def print_reverse_tree(root):
+    h = height(root)
+    for i in reversed(range(1, h + 1)):
+        display_same_height_nodes(root, i)
+
+
+def __height(root):
+    if root == None:
+        return -1
+    else:
+        return 1 + max(height(root.left), height(root.right))
+
+
+def height(root):
+    return __height(root)
 
 
 def traverse(root):
@@ -66,6 +83,11 @@ def traverse(root):
     display_parents(root)
     print ("\n\n Display nodes at the same height")
     display_same_height_nodes(root, 2)
+    print ("\n\nheight of the tree")
+    print (height(root))
+
+    print ("\n\n Print Reversel")
+    print_reverse_tree(root)
 
 
 def test_traversal():
