@@ -33,9 +33,9 @@ def testBTNode():
     A test function for BTNode.
     :return: None
     """
-    left = BTNode(10)
-    right = BTNode(20)
-    parent = BTNode(30)
+    parent = BTNode(10)
+    left = BTNode(20)
+    right = BTNode(30)
     parent.left = left
     parent.right = right
     print('parent (30):', parent.val)
