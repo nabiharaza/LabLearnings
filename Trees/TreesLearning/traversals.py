@@ -115,6 +115,7 @@ def list_longest_path(root):
     else:
         return [root.value] + r
 
+
 def traverse(root):
     print("\n postorder")
     postorder(root)
@@ -145,8 +146,6 @@ def traverse(root):
     print list_longest_path(root)
 
 
-
-
 def test_traversal():
     traverse(BTNode('A',
                     BTNode('B',
@@ -162,3 +161,28 @@ def test_traversal():
 
 if __name__ == "__main__":
     test_traversal()
+
+# void
+# printOddNodes(Node * root, bool
+# isOdd = true)
+# {
+# // If
+# empty
+# tree
+# if (root == NULL)
+# return;
+#
+# // If
+# current
+# node is of
+# odd
+# level
+# if (isOdd)
+#     cout << root->data << " ";
+#
+# // Recur
+# for children with isOdd
+# // switched.
+# printOddNodes(root->left, !isOdd);
+# printOddNodes(root->right, !isOdd);
+# }
